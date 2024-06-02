@@ -9,12 +9,16 @@ interface NavbarItems {
 const Navbar = () => {
   const navbarItems: NavbarItems[] = [{ name: "Home", link: { href: "" } }];
   return (
-    <nav>
-      {navbarItems.map((item, index) => (
-        <Link key={index} href={item.link.href} title={item.name}>
-          {item.name}
-        </Link>
-      ))}
+    <nav className="flex-row hidden md:flex">
+      <ul>
+        {navbarItems.map((item, index) => (
+          <li key={index}>
+            <Link href={item.link.href} title={item.name}>
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };
